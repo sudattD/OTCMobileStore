@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.synovergetest.otcmobilestore.AdminScreen">
+
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_admin" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableTop="@drawable/ring"
+            android:gravity="center"
+            android:text="Settings"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableTop="@drawable/ring"
+            android:gravity="center"
+            android:text="Logs"
+            android:textSize="30sp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableTop="@drawable/ring"
+            android:gravity="center"
+            android:text="Support"
+            android:textSize="30sp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableTop="@drawable/ring"
+            android:gravity="center"
+            android:text="Bluetooth"
+            android:textSize="30sp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableTop="@drawable/ring"
+            android:gravity="center"
+            android:text="On"
+            android:textSize="30sp"
+
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.synovergetest.otcmobilestore.LoginActivity">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha"
+        android:layout_alignParentRight="true"
+        android:background="#000000"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:hint="@string/Username"
+                android:textSize="@dimen/text_font_size_tablet" />
+
+
+            <EditText
+                android:id="@+id/edt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/Password"
+                android:textSize="@dimen/text_font_size_tablet" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/linear1"
+            android:background="@color/switch_thumb_normal_material_light"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/merchant"
+                android:textSize="@dimen/text_font_size_tablet" />
+
+            <EditText
+                android:id="@+id/edt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/storeID"
+                android:textSize="@dimen/text_font_size_tablet" />
+
+            <EditText
+                android:id="@+id/edt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/terminalID"
+                android:textSize="@dimen/text_font_size_tablet" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickLogin"
+                android:text="LOGIN"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

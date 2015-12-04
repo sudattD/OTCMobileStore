@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context="com.synovergetest.otcmobilestore.DashboardScreen">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:background="#000000"
+        android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:background="#000000"
+        android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ringlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:onClick="onClickSale"
+                android:text="@string/title_sale"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:onClick="onClickRefund"
+                android:text="@string/title_refund"
+                android:textSize="30sp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:onClick="onClickCustomers"
+                android:text="@string/title_customer"
+                android:textSize="30sp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:onClick="onClickProducts"
+                android:text="@string/title_product"
+                android:textSize="30sp"
+
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ringsecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ringlayout"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:text="@string/title_admin"
+                android:onClick="onClickAdmin"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:text="@string/title_report"
+                android:onClick="onClickReports"
+                android:textSize="30sp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:text="@string/title_connect"
+                android:onClick="onClickConnect"
+                android:textSize="30sp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:drawableTop="@drawable/ring"
+                android:gravity="center"
+                android:text="SCANNER"
+                android:onClick="onClickScanner"
+                android:textSize="30sp"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableTop="@drawable/ring"
+            android:gravity="center"
+            android:text="SYNC"
+            android:onClick="onClickSync"
+            android:textSize="30sp"
+
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

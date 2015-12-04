@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.synovergetest.otcmobilestore.ReportScreen">
+
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_reports_screen" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/transaction"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:drawableLeft="@drawable/ring"
+            android:gravity="center"
+            android:text="Transactions"
+            android:textSize="30sp" />
+
+
+        <TextView
+            android:id="@+id/psold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/transaction"
+            android:drawableLeft="@drawable/ring"
+            android:gravity="center"
+            android:text="Product Sold"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/hplan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/psold"
+            android:drawableLeft="@drawable/ring"
+            android:gravity="center"
+            android:text="Health Plan"
+            android:textSize="30sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#eee">
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="EMAIL ADDRESS"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEND"/>
+    </LinearLayout>
+
+</RelativeLayout>

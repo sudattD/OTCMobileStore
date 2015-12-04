@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.synovergetest.otcmobilestore.CustomerScreen">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_customers" />
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/app_bar"
+        android:src="@drawable/ic_action_refresh"
+        android:background="#000000"
+        android:layout_marginTop="50dp"
+        android:layout_centerInParent="true"/>
+
+    <include
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/iv"
+        layout="@layout/frag_customer_top_labels"
+        android:layout_marginTop="40dp"
+        />
+</RelativeLayout>

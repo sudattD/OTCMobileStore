@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+
+    tools:context="com.synovergetest.otcmobilestore.SettingsScreen">
+
+
+    <include
+
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_settings" />
+
+
+    <LinearLayout
+        android:layout_below="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+
+            >
+
+
+            <include
+                layout="@layout/frag_left_settings"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:layout_marginRight="5dp"
+           >
+
+            <include
+                layout="@layout/frag_settings_right"
+
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</RelativeLayout>
