@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class AdminScreen extends ActionBarActivity {
+public class AdminScreen extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

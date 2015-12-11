@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
-public class CustomerScreen extends ActionBarActivity implements View.OnClickListener {
+public class CustomerScreen extends OTCBaseActivity implements View.OnClickListener {
 
     ImageView refreshView,addImage,downArrowImage,searchImage;
 

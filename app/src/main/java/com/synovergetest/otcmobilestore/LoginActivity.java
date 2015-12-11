@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class LoginActivity extends ActionBarActivity {
+public class LoginActivity extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

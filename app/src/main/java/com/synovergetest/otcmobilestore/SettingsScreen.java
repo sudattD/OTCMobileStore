@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class SettingsScreen extends ActionBarActivity {
+public class SettingsScreen extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

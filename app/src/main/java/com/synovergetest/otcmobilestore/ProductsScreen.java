@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class ProductsScreen extends ActionBarActivity {
+public class ProductsScreen extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

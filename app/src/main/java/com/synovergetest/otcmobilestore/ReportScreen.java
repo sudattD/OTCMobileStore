@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class ReportScreen extends ActionBarActivity {
+public class ReportScreen extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

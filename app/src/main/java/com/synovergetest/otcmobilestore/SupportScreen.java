@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class SupportScreen extends ActionBarActivity {
+public class SupportScreen extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class DashboardScreen extends ActionBarActivity {
+public class DashboardScreen extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

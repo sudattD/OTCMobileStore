@@ -11,7 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends OTCBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
