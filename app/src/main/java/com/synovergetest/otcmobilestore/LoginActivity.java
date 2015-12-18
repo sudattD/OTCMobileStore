@@ -15,17 +15,21 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.otc.utility.AppController;
+import com.otc.utility.WebServiceCall;
+import com.otc.utility.WebserviceResponseListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class LoginActivity extends OTCBaseActivity {
+public class LoginActivity extends OTCBaseActivity implements WebserviceResponseListener {
 
     Context mContext;
     private ProgressDialog pDialog;
 
     private String urlJsonObj = "http://api.androidhive.info/volley/person_object.json";
+    // private String urlJsonObj = "http://162.144.92.244:8180/GPSMobileApp.svc/AuthenticateUser/?UserName=mehul.parmar@synoverge.com&Password=Mehul@123";
+    //http://162.144.92.244:8180/GPSMobileApp.svc/AuthenticateUser/?UserName=mehul.parmar@synoverge.com&Password=Mehul@123
 
 
     @Override
@@ -45,6 +49,11 @@ public class LoginActivity extends OTCBaseActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        makeJsonObjectRequest();
+    }
 
     public void onClickLogin(View v)
     {
@@ -57,6 +66,9 @@ public class LoginActivity extends OTCBaseActivity {
      */
     private void makeJsonObjectRequest() {
 
+        WebServiceCall mWebser = new WebServiceCall(mContext, urlJsonObj, this);
+        mWebser.makeJsonObjectRequest();
+/*
 
         showDialog();
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
@@ -76,13 +88,13 @@ public class LoginActivity extends OTCBaseActivity {
                     String home = phone.getString("home");
                     String mobile = phone.getString("mobile");
 
-                 /*   jsonResponse = "";
+                 *//*   jsonResponse = "";
                     jsonResponse += "Name: " + name + "\n\n";
                     jsonResponse += "Email: " + email + "\n\n";
                     jsonResponse += "Home: " + home + "\n\n";
                     jsonResponse += "Mobile: " + mobile + "\n\n";
 
-                    txtResponse.setText(jsonResponse);*/
+                    txtResponse.setText(jsonResponse);*//*
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -94,10 +106,10 @@ public class LoginActivity extends OTCBaseActivity {
         }, new Response.ErrorListener() {
 
             @Override
-            public void onErrorResponse(VolleyError error) {/*
+            public void onErrorResponse(VolleyError error) {*//*
                 VolleyLog.d(TAG, "Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_SHORT).show();*/
+                        error.getMessage(), Toast.LENGTH_SHORT).show();*//*
                 // hide the progress dialog
 
                 showToast(mContext, error.getMessage());
@@ -106,7 +118,7 @@ public class LoginActivity extends OTCBaseActivity {
         });
 
         // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(jsonObjReq);
+        AppController.getInstance().addToRequestQueue(jsonObjReq);*/
     }
 
     /**
@@ -131,4 +143,14 @@ public class LoginActivity extends OTCBaseActivity {
             pDialog.dismiss();
     }
 
+    @Override
+    public void response(String strresponse) {
+
+        showToast(mContext, "sudatt" + strresponse);
+    }
+
+    @Override
+    public void onError() {
+
+    }
 }
