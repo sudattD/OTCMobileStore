@@ -135,6 +135,11 @@ public class SqLiteHelper extends SQLiteOpenHelper {
                 + CUSTOMER_UPDATED_AT + " TEXT"
                 + ")";
 
+        String CREATE_CUSTOMER_TICKETS = "CREATE TABLE "
+                + TABLE_TICKETS_DETAIL + "("
+                + TICKETS_ID + " INTEGER PRIMARY KEY,"
+                + TICKETS_TITLE + " TEXT,"
+                + TICKETS_DESCRIPTION + " TEXT,";//incomplete from here
 
         db.execSQL(CREATE_CUSTOMER_DETAILS_TABLE);
 
