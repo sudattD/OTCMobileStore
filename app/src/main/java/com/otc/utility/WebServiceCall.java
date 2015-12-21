@@ -5,12 +5,18 @@ import android.content.Context;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.synovergetest.otcmobilestore.OTCBaseActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by davesuda on 12/18/2015.
@@ -71,7 +77,7 @@ public class WebServiceCall extends OTCBaseActivity {
                 hideDialog();
                 mWebServiceResponseListener.response(response + "");
             }
-        }, new Response.ErrorListener() {
+        }, new ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {/*
@@ -100,6 +106,45 @@ public class WebServiceCall extends OTCBaseActivity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+
+    public void makeJsonPOSTRequest() {
+        showDialog();
+        StringRequest postRequest = new StringRequest(Request.Method.POST, urlJsonObj,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response).getJSONObject("form");
+                            String site = jsonResponse.getString("site"),
+                                    network = jsonResponse.getString("network");
+                            System.out.println("Site: " + site + "\nNetwork: " + network);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                // the POST parameters:
+                params.put("site", "code");
+                params.put("network", "tutsplus");
+                return params;
+            }
+        };
+
+        Volley.newRequestQueue(this).add(postRequest);
+
+
     }
 
 }
