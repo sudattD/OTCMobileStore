@@ -52,6 +52,22 @@ public class SqLiteHelper extends SQLiteOpenHelper {
 
 //##########################################################################################/////
 
+
+    private static final String TABLE_CATEGORY_DETAIL = "CategoryDetails";
+    private static final String CATEGORY_ID = "categoryID";
+    private static final String PARENT_ID = "parentID";
+    private static final String NAME = "name";
+    private static final String CREATED_AT = "CreatedAt";
+    private static final String UPDATED_AT = "UpdatedAt";
+
+    //##########################################################################################/////
+
+
+
+
+
+
+
     Context mContext;
     private SQLiteDatabase db;
 
