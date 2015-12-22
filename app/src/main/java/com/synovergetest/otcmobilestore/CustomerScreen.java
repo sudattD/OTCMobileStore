@@ -1,19 +1,28 @@
 package com.synovergetest.otcmobilestore;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import com.android.adapters.CustomAdapter;
 
 
 public class CustomerScreen extends OTCBaseActivity implements View.OnClickListener {
 
     ImageView refreshView,addImage,downArrowImage,searchImage;
-
-
+    Context mContext;
+    ListView listView;
+    public static String[] id_ = {"1", "2", "3", "4", "5"};
+    public static String[] names_ = {"sudatt", "rahul", "Aniket", "Chirag", "Shraddha"};
+    public static String[] lastnames_ = {"Dave", "Dravid", "Sananse", "Singhania", "Samrat"};
+    public static String[] postal_ = {"678", "67567", "657567", "6678", "98745"};
+    public static String[] phone_ = {"9878787878", "100", "7896456", "987456123", "9712386301"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,8 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
 
     private void initializeViews() {
 
+
+        mContext = this;
         refreshView = (ImageView) findViewById(R.id.refreshView);
         refreshView.setOnClickListener(this);
 
@@ -37,6 +48,10 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
 
         searchImage  = (ImageView)findViewById(R.id.searchView);
         searchImage.setOnClickListener(this);
+
+
+        listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(new CustomAdapter(this, id_));
 
     }
 
