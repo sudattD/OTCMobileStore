@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.synovergetest.otcmobilestore.ProductsScreen;
 import com.synovergetest.otcmobilestore.R;
 
 /**
@@ -57,6 +58,10 @@ public class ProductAdapter extends BaseAdapter {
         holder.tv2 = (TextView) rowView.findViewById(R.id.tvListItem2);
         holder.tv3 = (TextView) rowView.findViewById(R.id.tvListItem3);
 
+
+        holder.tv1.setText(result[position]);
+        holder.tv2.setText(ProductsScreen.sku_[position]);
+        holder.tv3.setText(ProductsScreen.title_[position]);
 
         return rowView;
     }
