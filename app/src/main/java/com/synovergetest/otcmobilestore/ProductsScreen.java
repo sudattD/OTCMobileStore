@@ -7,15 +7,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.android.adapters.ProductAdapter;
+
 
 public class ProductsScreen extends OTCBaseActivity {
 
 
     Context mContext;
     ListView listView;
-    public static String[] id_ = {"1", "2", "3"};
-    public static String[] sku_ = {"1asfer", "2aserd", "3tyrfd"};
-    public static String[] title_ = {"Naagraj Venkat", "Dinesh Mathur", "Sreeraj Maali"};
+    public static String[] id_ = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    public static String[] sku_ = {"1asfer", "2aserd", "3tyrfd", "sku4", "sku5", "sku6", "sku7", "sku8", "sku9", "sku10"};
+    public static String[] title_ = {"Naagraj Venkat", "Dinesh Mathur", "Sreeraj Maali", "Dharmesh P.", "Nayan Mongia", "Sourav Ganguly", "Mohd. Azharuddin", "Venkatesh Prasad", "Rahul Dravid", "Mahendra Dhoni"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class ProductsScreen extends OTCBaseActivity {
 
         mContext = this;
         listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(new ProductAdapter(this, id_));
 
     }
 
