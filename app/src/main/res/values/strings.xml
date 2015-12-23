@@ -12,8 +12,8 @@
     <string name="merchant">Merchant ID</string>
     <string name="storeID">Store ID</string>
     <string name="terminalID">Terminal ID</string>
-        <string name="title_activity_dashboard_screen">DashboardScreen</string>
-        <string name="title_activity_customer_screen">CustomerScreen</string>
+    <string name="title_activity_dashboard_screen">DashboardScreen</string>
+    <string name="title_activity_customer_screen">CustomerScreen</string>
 
 
     <string name="title_sale">SALE</string>
@@ -33,26 +33,29 @@
     <string name="title_last_name">Last Name</string>
     <string name="title_post_code">Post Code</string>
     <string name="title_phone">Phone Number</string>
-        <string name="title_activity_products_screen">ProductsScreen</string>
-    
-    
+    <string name="title_activity_products_screen">ProductsScreen</string>
+
+
     <string name="title_ID">ID</string>
     <string name="title_SKU">SKU</string>
     <string name="title_title">TITLE</string>
-    
+
     <string name="title_quantity">Quantity in store</string>
     <string name="title_quantity_order">Quantity in order</string>
     <string name="title_receiving">Receiving</string>
     <string name="title_quantity_">Quantity</string>
     <string name="title_adjustments">Adjustments</string>
     <string name="title_reason">Reason</string>
-        <string name="title_activity_admin_screen">AdminScreen</string>
-        <string name="title_activity_report_screen">ReportScreen</string>
-        <string name="title_activity_sale_screen">SaleScreen</string>
-        <string name="title_activity_log_viewer_screen">LogViewerScreen</string>
-        <string name="title_activity_support_screen">Support</string>
-        <string name="title_activity_settings_screen">Settings</string>
+    <string name="title_activity_admin_screen">AdminScreen</string>
+    <string name="title_activity_report_screen">ReportScreen</string>
+    <string name="title_activity_sale_screen">SaleScreen</string>
+    <string name="title_activity_log_viewer_screen">LogViewerScreen</string>
+    <string name="title_activity_support_screen">Support</string>
+    <string name="title_activity_settings_screen">Settings</string>
     <string name="title_card_number">Card Number</string>
     <string name="title_get_balance">Get Balance</string>
-        <string name="title_activity_otcbase">OTCBaseActivity</string>
+    <string name="title_activity_otcbase">OTCBaseActivity</string>
+
+
+    <string name="spinner_title">Select Category</string>
 </resources>

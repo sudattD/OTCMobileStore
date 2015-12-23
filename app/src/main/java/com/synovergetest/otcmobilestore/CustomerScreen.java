@@ -18,11 +18,11 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
     ImageView refreshView,addImage,downArrowImage,searchImage;
     Context mContext;
     ListView listView;
-    public static String[] id_ = {"1", "2", "3", "4", "5"};
-    public static String[] names_ = {"sudatt", "rahul", "Aniket", "Chirag", "Shraddha"};
-    public static String[] lastnames_ = {"Dave", "Dravid", "Sananse", "Singhania", "Samrat"};
-    public static String[] postal_ = {"678", "67567", "657567", "6678", "98745"};
-    public static String[] phone_ = {"9878787878", "100", "7896456", "987456123", "9712386301"};
+    public static String[] id_ = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    public static String[] names_ = {"sudatt", "rahul", "Aniket", "Chirag", "Shraddha", "Akhil", "Rana", "Diwaan", "Bajirao", "Rahim"};
+    public static String[] lastnames_ = {"Dave", "Dravid", "Sananse", "Singhania", "Samrat", "Hiranandani", "Sehgal", "Mohammad", "Khan", "Kumar"};
+    public static String[] postal_ = {"678", "67567", "657567", "6678", "98745", "5676", "7878", "5634", "4321", "8908"};
+    public static String[] phone_ = {"9878787878", "100", "7896456", "987456123", "9712386301", "5768576", "75645", "4321", "23456", "8979"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
