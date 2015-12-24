@@ -139,9 +139,18 @@ public class SqLiteHelper extends SQLiteOpenHelper {
                 + TABLE_TICKETS_DETAIL + "("
                 + TICKETS_ID + " INTEGER PRIMARY KEY,"
                 + TICKETS_TITLE + " TEXT,"
-                + TICKETS_DESCRIPTION + " TEXT,";//incomplete from here
+                + TICKETS_DESCRIPTION + " TEXT,"
+                + TICKETS_NOTES + " TEXT,"
+                + TICKETS_RESOLUTION + " TEXT,"
+                + TICKETS_SEVERITY + " TEXT,"
+                + TICKETS_STATUS + " TEXT,"
+                + TICKETS_CREATED + " TEXT,"
+                + TICKETS_UPDATED + " TEXT";
+
+        // String CREATE_CATEGORY_DETAIL =
 
         db.execSQL(CREATE_CUSTOMER_DETAILS_TABLE);
+        db.execSQL(CREATE_CUSTOMER_TICKETS);
 
 
 
