@@ -7,10 +7,6 @@
     tools:context="com.synovergetest.otcmobilestore.SettingsScreen">
 
 
-    <include
-
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar_settings" />
 
 
     <LinearLayout

@@ -6,10 +6,6 @@
     tools:context="com.synovergetest.otcmobilestore.LogViewerScreen">
 
 
-    <include
-
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar_logviewer" />
 
 <include
     android:layout_height="wrap_content"

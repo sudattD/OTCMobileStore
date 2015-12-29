@@ -5,15 +5,12 @@
 
     tools:context="com.synovergetest.otcmobilestore.CustomerScreen">
 
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar_customers" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/app_bar"
+
         android:orientation="horizontal"
         android:weightSum="1">
 

@@ -3,8 +3,10 @@ package com.synovergetest.otcmobilestore;
 import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import com.android.adapters.ProductAdapter;
@@ -26,6 +28,20 @@ public class ProductsScreen extends OTCBaseActivity {
 
 
         initializeViews();
+        settingUpActionBarView();
+    }
+
+    private void settingUpActionBarView() {
+
+        LayoutInflater infalInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View mView = infalInflater.inflate(R.layout.app_bar_products, null);
+
+        getSupportActionBar().setCustomView(mView);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(
+                getResources().getDrawable(R.drawable.action_bar_image));
     }
 
     private void initializeViews() {

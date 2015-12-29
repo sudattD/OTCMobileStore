@@ -3,6 +3,7 @@ package com.synovergetest.otcmobilestore;
 import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,13 +32,27 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
 
 
         initializeViews();
+        settingUpActionBarView();
+    }
+
+    private void settingUpActionBarView() {
+
+        LayoutInflater infalInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View mView = infalInflater.inflate(R.layout.app_bar_customers, null);
+
+        getSupportActionBar().setCustomView(mView);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(
+                getResources().getDrawable(R.drawable.action_bar_image));
     }
 
     private void initializeViews() {
 
 
         mContext = this;
-        refreshView = (ImageView) findViewById(R.id.refreshView);
+       /* refreshView = (ImageView) findViewById(R.id.refreshView);
         refreshView.setOnClickListener(this);
 
         addImage = (ImageView)findViewById(R.id.plusArrow);
@@ -47,7 +62,7 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
         downArrowImage.setOnClickListener(this);
 
         searchImage  = (ImageView)findViewById(R.id.searchView);
-        searchImage.setOnClickListener(this);
+        searchImage.setOnClickListener(this);*/
 
 
         listView = (ListView) findViewById(R.id.listView);
@@ -81,7 +96,7 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.refreshView:
+            /*case R.id.refreshView:
                 Toast.makeText(getApplicationContext(),"coming soon..",Toast.LENGTH_SHORT).show();
                 break;
 
@@ -99,7 +114,7 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
                 break;
 
             default:
-                break;
+                break;*/
         }
 
 

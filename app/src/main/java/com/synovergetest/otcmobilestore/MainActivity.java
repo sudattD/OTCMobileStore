@@ -53,6 +53,7 @@ public class MainActivity extends OTCBaseActivity {
             protected void onPostExecute(Void result) {
 
 
+
 					/*
 					 * The Code below starts another activity which is a screen with PIN in our case .
 					*/

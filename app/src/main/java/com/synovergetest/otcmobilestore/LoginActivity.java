@@ -3,6 +3,7 @@ package com.synovergetest.otcmobilestore;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -39,6 +40,7 @@ public class LoginActivity extends OTCBaseActivity implements WebserviceResponse
 
         initializeViews();
     }
+
 
     private void initializeViews() {
 

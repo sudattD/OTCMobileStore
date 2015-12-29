@@ -6,11 +6,6 @@
     tools:context="com.synovergetest.otcmobilestore.SupportScreen">
 
 
-    <include
-
-        layout="@layout/app_bar_support"
-        android:id="@+id/app_bar"
-        />
 
     <include
         android:layout_marginTop="30dp"
