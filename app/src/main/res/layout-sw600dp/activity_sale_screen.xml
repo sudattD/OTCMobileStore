@@ -42,9 +42,11 @@
             android:layout_height="wrap_content"
             android:text="@string/title_get_balance"
             android:id="@+id/button"
+            android:background="@drawable/blue_btn"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="40dp"
             android:layout_below="@+id/app_bar"
+            android:textColor="#fff"
             />
 
     </LinearLayout>

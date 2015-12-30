@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.PersistableBundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -48,6 +49,13 @@ public class LoginActivity extends OTCBaseActivity implements WebserviceResponse
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Please wait...");
         pDialog.setCancelable(false);
+
+        final TextInputLayout usernameWrapper = (TextInputLayout) findViewById(R.id.usernameWrapper);
+        final TextInputLayout passwordWrapper = (TextInputLayout) findViewById(R.id.usernamepassword);
+        usernameWrapper.setHint("Username");
+        passwordWrapper.setHint("Password");
+
+
 
     }
 

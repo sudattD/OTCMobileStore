@@ -39,6 +39,18 @@ public class AdminScreen extends OTCBaseActivity {
     }
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
     public void onClickSettings(View v)
     {
 

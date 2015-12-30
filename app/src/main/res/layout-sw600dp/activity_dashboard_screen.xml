@@ -11,16 +11,15 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
-        android:background="#000000"
-        android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha" />
+
+        android:src="@drawable/ic_launcher" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
-        android:background="#000000"
-        android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha" />
+        android:src="@drawable/ic_launcher" />
 
     <LinearLayout
         android:layout_width="match_parent"

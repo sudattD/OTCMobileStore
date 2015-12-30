@@ -9,110 +9,126 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:background="#000000"/>
+        android:src="@drawable/ic_launcher" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-
-    <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
+        android:gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edt1"
+        <LinearLayout
+            android:id="@+id/linear1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_marginLeft="@dimen/margin_left_right_tablet"
+            android:orientation="vertical">
 
-            android:layout_marginRight="@dimen/margin_left_right_tablet"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/usernameWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            android:hint="@string/Username"
-            android:textSize="@dimen/text_font_size_tablet" />
+
+                <EditText
+                    android:id="@+id/edt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/margin_left_right_tablet"
+
+                    android:layout_marginRight="@dimen/margin_left_right_tablet"
+
+                    android:hint="@string/Username"
+                    android:textSize="@dimen/text_font_size_tablet" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/usernamepassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:inputType="textPassword"
+                    android:layout_marginLeft="@dimen/margin_left_right_tablet"
+                    android:layout_marginRight="@dimen/margin_left_right_tablet"
+                    android:hint="@string/Password"
+                    android:textSize="@dimen/text_font_size_tablet" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
 
 
-        <EditText
-            android:id="@+id/edt2"
+        <LinearLayout
+            android:id="@+id/linear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_below="@+id/linear1"
+            android:background="@color/switch_thumb_normal_material_light"
+            android:orientation="vertical">
 
-            android:layout_marginLeft="@dimen/margin_left_right_tablet"
-            android:layout_marginRight="@dimen/margin_left_right_tablet"
-            android:hint="@string/Password"
-            android:textSize="@dimen/text_font_size_tablet" />
+            <EditText
+                android:id="@+id/edt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    </LinearLayout>
+                android:editable="false"
+                android:layout_marginLeft="@dimen/margin_left_right_tablet"
+                android:layout_marginRight="@dimen/margin_left_right_tablet"
+                android:hint="@string/merchant"
+                android:textSize="@dimen/text_font_size_tablet" />
 
+            <EditText
+                android:id="@+id/edt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    <LinearLayout
-        android:id="@+id/linear2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+                android:editable="false"
+                android:layout_marginLeft="@dimen/margin_left_right_tablet"
+                android:layout_marginRight="@dimen/margin_left_right_tablet"
+                android:hint="@string/storeID"
+                android:textSize="@dimen/text_font_size_tablet" />
 
-        android:layout_below="@+id/linear1"
-        android:background="@color/switch_thumb_normal_material_light"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/edt3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginLeft="@dimen/margin_left_right_tablet"
-            android:layout_marginRight="@dimen/margin_left_right_tablet"
-            android:hint="@string/merchant"
-            android:textSize="@dimen/text_font_size_tablet" />
-
-        <EditText
-            android:id="@+id/edt4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginLeft="@dimen/margin_left_right_tablet"
-            android:layout_marginRight="@dimen/margin_left_right_tablet"
-            android:hint="@string/storeID"
-            android:textSize="@dimen/text_font_size_tablet" />
-
-        <EditText
-            android:id="@+id/edt5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-
-            android:layout_marginLeft="@dimen/margin_left_right_tablet"
-            android:layout_marginRight="@dimen/margin_left_right_tablet"
-            android:hint="@string/terminalID"
-            android:textSize="@dimen/text_font_size_tablet" />
-    </LinearLayout>
+            <EditText
+                android:id="@+id/edt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:layout_marginLeft="@dimen/margin_left_right_tablet"
+                android:layout_marginRight="@dimen/margin_left_right_tablet"
+                android:hint="@string/terminalID"
+                android:textSize="@dimen/text_font_size_tablet" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="onClickLogin"
-                android:text="LOGIN"/>
+                android:background="@drawable/blue_btn"
+                android:text="LOGIN"
+                android:layout_margin="3dp"
+                android:textColor="#fff" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SIGN UP"/>
+                android:background="@drawable/blue_btn"
+                android:text="SIGN UP"
+                android:textColor="#fff" />
 
         </LinearLayout>
     </LinearLayout>

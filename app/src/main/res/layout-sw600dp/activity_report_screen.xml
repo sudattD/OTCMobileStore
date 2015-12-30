@@ -65,6 +65,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/blue_btn"
+            android:textColor="#fff"
             android:text="SEND"/>
     </LinearLayout>
 

@@ -8,32 +8,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#eee"
-        android:gravity="right">
+        android:gravity="right|center_horizontal">
 
 
-        <Spinner
-            android:layout_toLeftOf="@+id/buttonL"
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="#000"
 
-
-            >
-
-        </Spinner>
 
         <Button
             android:id="@+id/buttonL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:background="#3265ff"
+            android:textColor="#fff"
+            android:layout_marginRight="2dp"
             android:text="Find" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/buttonL"
+            android:background="#3265ff"
+            android:textColor="#fff"
             android:text="Refresh" />
 
 

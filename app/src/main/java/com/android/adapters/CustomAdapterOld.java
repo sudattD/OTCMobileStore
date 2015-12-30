@@ -15,13 +15,13 @@ import com.synovergetest.otcmobilestore.R;
 /**
  * Created by davesuda on 12/22/2015.
  */
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapterOld extends BaseAdapter {
 
     String[] result;
     Context mContext;
     private static LayoutInflater inflater = null;
 
-    public CustomAdapter(Activity act, String[] list) {
+    public CustomAdapterOld(Activity act, String[] list) {
         this.mContext = act;
         this.result = list;
         inflater = (LayoutInflater) act.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -70,7 +70,8 @@ public class CustomAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(mContext, "CLICKED" + result[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "CLICKED" + result[position].toString() + "name:-" + CustomerScreen.names_[position].toString(), Toast.LENGTH_SHORT).show();
+
             }
         });
 
