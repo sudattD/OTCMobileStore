@@ -74,6 +74,9 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
 
         edt_id = (EditText) findViewById(R.id.edtId);
         edt_first_name = (EditText) findViewById(R.id.edtFirstName);
+        edt_last_name = (EditText) findViewById(R.id.edtLastName);
+        edt_phone_num = (EditText) findViewById(R.id.edtPhone);
+        edt_post_code = (EditText) findViewById(R.id.edtPostCode);
 
     }
 
@@ -181,8 +184,11 @@ public class CustomerScreen extends OTCBaseActivity implements View.OnClickListe
                 public void onClick(View view) {
 
                     Toast.makeText(mContext, "CLICKED" + result[position].toString() + "name:-" + CustomerScreen.names_[position].toString(), Toast.LENGTH_SHORT).show();
+                    edt_id.setText(result[position].toString());
                     edt_first_name.setText(CustomerScreen.names_[position].toString());
-
+                    edt_last_name.setText(CustomerScreen.lastnames_[position].toString());
+                    edt_post_code.setText(CustomerScreen.postal_[position].toString());
+                    edt_phone_num.setText(CustomerScreen.phone_[position].toString());
                 }
             });
 
