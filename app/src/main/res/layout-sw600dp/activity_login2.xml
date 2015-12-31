@@ -11,7 +11,7 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/logo_otc" />
 
 
     <LinearLayout

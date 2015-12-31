@@ -12,14 +12,14 @@
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
 
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/logo_otc" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/logo_otc" />
 
     <LinearLayout
         android:layout_width="match_parent"
