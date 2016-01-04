@@ -55,11 +55,11 @@ public class WebServiceCall extends OTCBaseActivity {
                 try {
                     // Parsing json object response
                     // response will be a json object
-                    String name = response.getString("name");
+                    /*String name = response.getString("name");
                     String email = response.getString("email");
                     JSONObject phone = response.getJSONObject("phone");
                     String home = phone.getString("home");
-                    String mobile = phone.getString("mobile");
+                    String mobile = phone.getString("mobile");*/
 
                  /*   jsonResponse = "";
                     jsonResponse += "Name: " + name + "\n\n";
@@ -68,14 +68,15 @@ public class WebServiceCall extends OTCBaseActivity {
                     jsonResponse += "Mobile: " + mobile + "\n\n";
 
                     txtResponse.setText(jsonResponse);*/
+                    hideDialog();
+                    mWebServiceResponseListener.response(response + "");
 
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
 
 
                 }
-                hideDialog();
-                mWebServiceResponseListener.response(response + "");
+
             }
         }, new ErrorListener() {
 
@@ -109,18 +110,47 @@ public class WebServiceCall extends OTCBaseActivity {
     }
 
 
+    //Example URL
+    //http://www.androidhive.info/2014/09/android-json-parsing-using-volley/
+
+    //volley tuts
+    //http://code.tutsplus.com/tutorials/an-introduction-to-volley--cms-23800
+
+
+    //found the code for post request here/
+    //http://stackoverflow.com/questions/31288480/how-to-send-json-post-request-using-volley-in-android-in-the-given-tutorial
+
+
     public void makeJsonPOSTRequest() {
         showDialog();
+
+        JSONObject jsonBody = new JSONObject();
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urlJsonObj, jsonBody, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject jsonObject) {
+
+                // Log.e(TAG, "Response " + jsonObject.toString());
+                mWebServiceResponseListener.response(jsonObject.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+
+                mWebServiceResponseListener.response(volleyError.getMessage());
+            }
+        });
+
         StringRequest postRequest = new StringRequest(Request.Method.POST, urlJsonObj,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
-                            JSONObject jsonResponse = new JSONObject(response).getJSONObject("form");
-                            String site = jsonResponse.getString("site"),
-                                    network = jsonResponse.getString("network");
-                            System.out.println("Site: " + site + "\nNetwork: " + network);
-                        } catch (JSONException e) {
+
+                            hideDialog();
+                            mWebServiceResponseListener.response(response);
+
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
@@ -128,7 +158,8 @@ public class WebServiceCall extends OTCBaseActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
+                        hideDialog();
+                        mWebServiceResponseListener.response(error.getMessage());
                     }
                 }
         ) {
