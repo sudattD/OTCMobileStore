@@ -7,6 +7,7 @@ import android.os.PersistableBundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +30,9 @@ public class LoginActivity extends OTCBaseActivity implements WebserviceResponse
     Context mContext;
     private ProgressDialog pDialog;
 
-    private String urlJsonObj = "http://api.androidhive.info/volley/person_object.json";
+    //private String urlJsonObj = "http://api.androidhive.info/volley/person_object.json";
+    private String urlJsonObj = "http://202.191.196.210/UAT/IPO/Computation/ServiceImplementation/Service.svc/AuthenticateUser";
+    //http://202.191.196.210/UAT/IPO/Computation/ServiceImplementation/Service.svc/AuthenticateUser
     // private String urlJsonObj = "http://162.144.92.244:8180/GPSMobileApp.svc/AuthenticateUser/?UserName=mehul.parmar@synoverge.com&Password=Mehul@123";
     //http://162.144.92.244:8180/GPSMobileApp.svc/AuthenticateUser/?UserName=mehul.parmar@synoverge.com&Password=Mehul@123
 
@@ -50,10 +53,10 @@ public class LoginActivity extends OTCBaseActivity implements WebserviceResponse
         pDialog.setMessage("Please wait...");
         pDialog.setCancelable(false);
 
-        final TextInputLayout usernameWrapper = (TextInputLayout) findViewById(R.id.usernameWrapper);
+       /* final TextInputLayout usernameWrapper = (TextInputLayout) findViewById(R.id.usernameWrapper);
         final TextInputLayout passwordWrapper = (TextInputLayout) findViewById(R.id.usernamepassword);
         usernameWrapper.setHint("Username");
-        passwordWrapper.setHint("Password");
+        passwordWrapper.setHint("Password");*/
 
 
 
@@ -76,8 +79,24 @@ public class LoginActivity extends OTCBaseActivity implements WebserviceResponse
      */
     private void makeJsonObjectRequest() {
 
-        WebServiceCall mWebser = new WebServiceCall(mContext, urlJsonObj, this);
-        mWebser.makeJsonObjectRequest();
+
+        try {
+
+            JSONObject mJsonObj = new JSONObject();
+            mJsonObj.put("userId", "MANOJ.GOEL");
+            mJsonObj.put("password", "hdfc123");
+
+
+            WebServiceCall mWebser = new WebServiceCall(mContext, urlJsonObj, this, mJsonObj);
+            mWebser.makeJsonPOSTRequest();
+
+
+        } catch (Exception e) {
+            //Log.e(LoginActivity.class.getSimpleName(),e.getMessage());
+        }
+
+
+
 /*
 
         showDialog();

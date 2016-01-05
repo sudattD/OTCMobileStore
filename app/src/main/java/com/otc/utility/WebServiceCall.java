@@ -3,6 +3,7 @@ package com.otc.utility;
 import android.app.ProgressDialog;
 import android.content.Context;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
@@ -27,12 +28,23 @@ public class WebServiceCall extends OTCBaseActivity {
     String urlJsonObj;
     WebserviceResponseListener mWebServiceResponseListener;
     private ProgressDialog pDialog;
-
+    JSONObject jObj;
 
     public WebServiceCall(Context mContext, String url, WebserviceResponseListener mWebServiceListener) {
         this.mContext = mContext;
         this.urlJsonObj = url;
         this.mWebServiceResponseListener = mWebServiceListener;
+
+        pDialog = new ProgressDialog(mContext);
+        pDialog.setMessage("Please wait...");
+        pDialog.setCancelable(false);
+    }
+
+    public WebServiceCall(Context mContext, String url, WebserviceResponseListener mWebServiceListener, JSONObject jobj) {
+        this.mContext = mContext;
+        this.urlJsonObj = url;
+        this.mWebServiceResponseListener = mWebServiceListener;
+        this.jObj = jobj;
 
         pDialog = new ProgressDialog(mContext);
         pDialog.setMessage("Please wait...");
@@ -124,56 +136,34 @@ public class WebServiceCall extends OTCBaseActivity {
     public void makeJsonPOSTRequest() {
         showDialog();
 
-        JSONObject jsonBody = new JSONObject();
+        //JSONObject jsonBody = new JSONObject();
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urlJsonObj, jsonBody, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urlJsonObj, jObj, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject jsonObject) {
 
                 // Log.e(TAG, "Response " + jsonObject.toString());
+                hideDialog();
                 mWebServiceResponseListener.response(jsonObject.toString());
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-
+                hideDialog();
                 mWebServiceResponseListener.response(volleyError.getMessage());
             }
-        });
-
-        StringRequest postRequest = new StringRequest(Request.Method.POST, urlJsonObj,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-
-                            hideDialog();
-                            mWebServiceResponseListener.response(response);
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        hideDialog();
-                        mWebServiceResponseListener.response(error.getMessage());
-                    }
-                }
-        ) {
+        }) {
             @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                // the POST parameters:
-                params.put("site", "code");
-                params.put("network", "tutsplus");
-                return params;
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json");
+                headers.put("charset", "utf-8");
+                return headers;
             }
         };
 
-        Volley.newRequestQueue(this).add(postRequest);
+
+        Volley.newRequestQueue(this).add(jsonObjectRequest);
 
 
     }
